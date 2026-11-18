@@ -3,14 +3,14 @@ use open_course_core::error::{AppError, Result};
 pub const CURRENT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 const GITHUB_LATEST_API: &str =
-    "https://api.github.com/repos/scriptology/open-course-cli/releases/latest";
+    "https://api.github.com/repos/Open-course-ai/open-course-cli/releases/latest";
 
-const GITHUB_LATEST_PAGE: &str = "https://github.com/scriptology/open-course-cli/releases/latest";
+const GITHUB_LATEST_PAGE: &str = "https://github.com/Open-course-ai/open-course-cli/releases/latest";
 
 /// Downloads the installer to a temp file first and only then runs it: with a
 /// plain `curl | sh` pipe a failed download (e.g. a release without assets)
 /// pipes nothing into `sh`, which exits 0 and fakes a successful update.
-const INSTALL_COMMAND: &str = "tmp=\"$(mktemp)\" && curl --proto '=https' --tlsv1.2 -LsSf https://github.com/scriptology/open-course-cli/releases/latest/download/opencourse-installer.sh -o \"$tmp\" && sh \"$tmp\"; rc=$?; rm -f \"$tmp\"; exit $rc";
+const INSTALL_COMMAND: &str = "tmp=\"$(mktemp)\" && curl --proto '=https' --tlsv1.2 -LsSf https://github.com/Open-course-ai/open-course-cli/releases/latest/download/opencourse-installer.sh -o \"$tmp\" && sh \"$tmp\"; rc=$?; rm -f \"$tmp\"; exit $rc";
 
 /// Query GitHub for the latest release tag and return it without the leading
 /// `v`. Any network or parse error is treated as "no update available" so the
@@ -152,7 +152,7 @@ mod tests {
     fn parses_version_from_redirect_location() {
         assert_eq!(
             version_from_location(
-                "https://github.com/scriptology/open-course-cli/releases/tag/v0.5.3"
+                "https://github.com/Open-course-ai/open-course-cli/releases/tag/v0.5.3"
             ),
             Some("0.5.3".to_string())
         );
