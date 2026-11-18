@@ -5,7 +5,8 @@ pub const CURRENT_VERSION: &str = env!("CARGO_PKG_VERSION");
 const GITHUB_LATEST_API: &str =
     "https://api.github.com/repos/Open-course-ai/open-course-cli/releases/latest";
 
-const GITHUB_LATEST_PAGE: &str = "https://github.com/Open-course-ai/open-course-cli/releases/latest";
+const GITHUB_LATEST_PAGE: &str =
+    "https://github.com/Open-course-ai/open-course-cli/releases/latest";
 
 /// Downloads the installer to a temp file first and only then runs it: with a
 /// plain `curl | sh` pipe a failed download (e.g. a release without assets)
