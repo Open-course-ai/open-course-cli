@@ -7,10 +7,10 @@ Terminal AI tutor for language learning. Exercises, lessons, and answer analysis
 The fastest way to get the latest release:
 
 ```bash
-curl --proto '=https' --tlsv1.2 -LsSf https://github.com/scriptology/open-course-cli/releases/latest/download/opencourse-installer.sh | sh
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/Open-course-ai/open-course-cli/releases/latest/download/opencourse-installer.sh | sh
 ```
 
-The installer detects macOS (Apple Silicon / Intel) and Linux x86_64, then downloads the matching binary into `~/.local/bin` (or `/usr/local/bin` if writable):
+The installer detects macOS (Apple Silicon) and Linux x86_64, then downloads the matching binary into `~/.local/bin` (or `/usr/local/bin` if writable):
 
 ```bash
 opencourse
@@ -151,7 +151,6 @@ Releases are automated with [release-please](https://github.com/googleapis/relea
 2. Merge the release PR — release-please creates the version tag (e.g. `v0.9.0`).
 3. GitHub Actions builds binaries for:
    - `aarch64-apple-darwin` (Apple Silicon)
-   - `x86_64-apple-darwin` (Intel Mac)
    - `x86_64-unknown-linux-gnu` (Linux)
 
    …and publishes them to the GitHub Release.
@@ -164,7 +163,6 @@ The workspace crates all share one version; only `crates/cli` (the `opencourse` 
 | Target | OS | Architecture |
 |--------|----|--------------|
 | `aarch64-apple-darwin` | macOS | Apple Silicon |
-| `x86_64-apple-darwin` | macOS | Intel |
 | `x86_64-unknown-linux-gnu` | Linux | x86_64 |
 
 ## License

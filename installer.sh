@@ -2,7 +2,7 @@
 # shellcheck disable=SC3043
 set -eu
 
-REPO="scriptology/open-course-cli"
+REPO="Open-course-ai/open-course-cli"
 BIN_NAME="opencourse"
 LEGACY_BIN_NAME="open-course-cli"
 
@@ -73,7 +73,7 @@ detect_platform() {
                     TARGET="aarch64-apple-darwin"
                     ;;
                 x86_64|amd64)
-                    TARGET="x86_64-apple-darwin"
+                    err "Intel Macs are no longer supported; the last release with an x86_64-apple-darwin binary predates this change"
                     ;;
                 *)
                     err "Unsupported architecture: $ARCH"
